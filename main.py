@@ -21,7 +21,9 @@ def findQuadruple(inputArray, targetSum):
 		
 		for i in range(x+1, len(inputArray)):
 			if item + inputArray[i] == targetSum:
-				outputArray.append([item, inputArray[i]])		
+				outputArray.append([item, inputArray[i]])	
+
+	# look into using recursion to solve for quadruple	
 	
 
 	return outputArray
@@ -29,4 +31,4 @@ def findQuadruple(inputArray, targetSum):
 
 # Tests go here
 # print(findQuadruple([7,6,4,-1,1,2], 16))
-print(findQuadruple([1, 2, 3, 4], 6))
+print(findQuadruple([1, 2, 3, 4], 5))
