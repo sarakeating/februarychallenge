@@ -1,1 +1,1 @@
-# februarychallenge
+# Attempting the February Challenge for the Conestoga GDSC

@@ -11,19 +11,20 @@ def findQuadruple(inputArray, targetSum):
 	
 	outputArray = []
 
-	# calculations
 
 	for x, item in enumerate(inputArray):
 
 		if item > targetSum:
 			continue 
 		
+		# looping over the subseequent items in the array, and
+		# seeing if each other item and the current element add
+		# to the target sum
 		for i in range(x+1, len(inputArray)):
 			if item + inputArray[i] == targetSum:
 				outputArray.append([item, inputArray[i]])	
 
-	# look into using recursion to solve for quadruple
-	# try different loop for each of the 4 numbers
+	# look into using recursion
 	
 
 	return outputArray
