@@ -7,25 +7,21 @@
 ## 				the target sum.
 
 
-def findQuadruple(inputArray, targetSum):
+def findQuadruple(inputArray, targetSum, depth=4):
 	
 	outputArray = []
-
+	prevSum = 0
 
 	for x, item in enumerate(inputArray):
-
-		if item > targetSum:
-			continue 
-		
-		# looping over the subseequent items in the array, and
-		# seeing if each other item and the current element add
-		# to the target sum
-		for i in range(x+1, len(inputArray)):
-			if item + inputArray[i] == targetSum:
-				outputArray.append([item, inputArray[i]])	
-
-	# look into using recursion
-	
+		while depth > 0:
+			for i in range(x+1, len(inputArray)):
+				if prevSum + inputArray[i] == targetSum:
+					outputArray.append([prevSum, inputArray[i]])	
+					break
+				else:
+					prevSum += inputArray[i]
+					findQuadruple(inputArray, targetSum, depth - 1)
+			break
 
 	return outputArray
 
